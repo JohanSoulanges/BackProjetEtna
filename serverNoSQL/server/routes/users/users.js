@@ -4,7 +4,6 @@ const { checkToken, cleanToken, checkAdmin } = require("../middleware/jwt");
 const jwt = require("jsonwebtoken");
 const Users = require("../../Models/users.models");
 const bcrypt = require("bcrypt");
-const { updateOne } = require("../../Models/users.models");
 const router = express.Router();
 
 /* GET current users listing. */
