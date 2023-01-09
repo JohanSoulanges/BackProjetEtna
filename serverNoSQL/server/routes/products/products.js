@@ -181,4 +181,17 @@ router.get("/category", function (req, res) {
     }
   });
 });
+
+// Get Products Array
+router.get("/array", function (req, res) {
+  console.log("Router get array");
+
+  Products.find({ _id: { $in: req.query.array } }).exec((err, products) => {
+    if (!products) {
+      res.status(403).json("erreur Products do not exist");
+    } else {
+      res.status(201).json(products);
+    }
+  });
+});
 module.exports = router;
